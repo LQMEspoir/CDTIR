@@ -1,0 +1,34 @@
+# Install a compatible PyTorch build first (GPU strongly recommended), then:
+# pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+# Match the CUDA build to your GPU driver; the reference environment uses cu124 (CUDA 12.4).
+
+# ── Core ──
+transformers>=4.48,<5
+peft>=0.14,<1
+datasets>=3.2,<5
+accelerate>=1.2,<2
+safetensors>=0.4
+sentencepiece>=0.2
+protobuf>=5
+numpy>=1.26
+
+# ── Evaluation (BLEU-4 / ROUGE-L / plotting) ──
+sacrebleu>=2.4,<3
+rouge-score>=0.1.2
+matplotlib>=3.8
+
+# ── Data export (Excel, used by fill_excel.py) ──
+openpyxl>=3.1
+
+# ── QLoRA (4-bit quantization) ──
+bitsandbytes>=0.45
+
+# ── Router-MultiLoRA diagnostics ──
+scikit-learn>=1.5,<2
+joblib>=1.4,<2
+
+# ── SwanLab experiment tracking (optional) ──
+swanlab>=0.4
+
+# ── vLLM OpenAI-compatible client (optional) ──
+openai>=1.40,<3
